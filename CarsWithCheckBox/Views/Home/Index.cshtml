@@ -1,0 +1,56 @@
+﻿@model IndexViewModel
+
+<div b-d9lnukun0l class="container">
+    <a href="/home/newCar" class="btn btn-primary">Add Car</a>
+    <table class="table table-hover table-striped table-bordered">
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>
+                Year
+                <a class="btn btn-dark" href="/home/index?sort=desc">
+                    <i class="bi bi-arrow-down-circle-fill"></i>
+                </a>
+            </th>
+            <th>Price</th>
+            <th>Car Type</th>
+            <th>Leather Seats</th>
+        </tr>
+
+        @foreach (Car car in Model.cars)
+        {
+            if (!car.HasLeatherSeats)
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Price.ToString("C");</td>
+                    <td>@car.CarType</td>
+                    <td>
+                        <i style="font-size:30px" class="bi bi-x"></i>
+                    </td>
+                </tr>
+            }
+
+            else
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Price.ToString("C");</td>
+                    <td>@car.CarType</td>
+                    <td>
+                        <i style="font-size:30px" class="bi bi-check"></i>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        }
+
+    </table>
+</div>
