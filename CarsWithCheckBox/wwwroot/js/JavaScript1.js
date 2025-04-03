@@ -43,6 +43,9 @@
         const carTypeValid = Number($("#car-type").val());
 
 
+
+
+
         const isFormValid = isMakeValid && isModelValid && isYearValid && isPriceValid && carTypeValid !== -1;
         $("#submit-button").prop('disabled', !isFormValid);
     }
